@@ -1,6 +1,9 @@
 import './app.css'
+import AddTask from './components/AddTask';
 import Header from './components/Header';
 function App (){
+
+  // const [taskLi]
 
   return <>
     <div className="container">
@@ -10,7 +13,7 @@ function App (){
 
         {
           // simple Input tag for adding new task with priority using useState.
-        // <AppTask />
+        <AddTask />
         }
 
         {
