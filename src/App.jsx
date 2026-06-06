@@ -1,9 +1,35 @@
+import { useState } from 'react';
 import './app.css'
 import AddTask from './components/AddTask';
 import Header from './components/Header';
+import DisplayTask from './components/DisplayTask';
 function App (){
 
-  // const [taskLi]
+  const [taskList , setTaskList] = useState([]);
+
+
+  function addTask(task){
+    setTaskList((prev) => {
+      return [...prev , {
+        task : task.title,
+        priority : task.priority,
+        id : Date.now()
+      }]
+    })
+  }
+
+
+  function removeTask(id){
+    setTaskList(prev => {
+      return prev.filter(task => task.id !== id)
+    })
+  }
+
+
+  function updateTask(id,newTask){
+    setTaskList(prev => prev?.map(task => task.id === id ? newTask : task)
+    )
+  }
 
   return <>
     <div className="container">
@@ -13,12 +39,12 @@ function App (){
 
         {
           // simple Input tag for adding new task with priority using useState.
-        <AddTask />
+        <AddTask addTask={addTask} setTaskList={setTaskList}/>
         }
 
         {
           // Container for displaying task list.
-        //<DisplayTasks /> 
+        <DisplayTask taskList={taskList} /> 
         }
 
         {

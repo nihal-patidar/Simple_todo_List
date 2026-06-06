@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react'
 import './addtask.css'
 
-export default function AddTask(){
+export default function AddTask({addTask}){
 
     const [task , setTask] = useState("Task1");
     const [priority , setPriority] = useState('low');
+
+    function handleAddTask(){
+        addTask({title : task , priority : priority});
+    }
 
     return (
         <div className="task_form">
@@ -16,7 +20,7 @@ export default function AddTask(){
                 <option value={'low'}>Low</option>
             </select>
 
-            <button className='add_task_btn' onClick={()=>console.log(task,priority)}>Add Task</button>
+            <button className='add_task_btn' onClick={handleAddTask}>Add Task</button>
         </div>
     )
 
