@@ -4,7 +4,7 @@ import '../index.css'
 
 export default function Task(props){
     return (
-        <div className="task">
+        <div className={`task ${props.task.priority}`}>
 
             <div className="left">
 
@@ -23,7 +23,7 @@ export default function Task(props){
             </div>
 
             <div className="actions">
-                <button className="edit" onClick={()=>props.updateTask(props.task.id)}>
+                <button className="edit" onClick={()=>props.setEdit({active : true , task : props.task})}>
                     Edit
                 </button>
 
