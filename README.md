@@ -79,7 +79,7 @@ Simple_to_do_List/
 │   │
 │   ├── components/
 │   │   ├── AddTodo.jsx
-│   │   ├── DisplayTodo.jsx
+│   │   ├── TodoItemList.jsx
 │   │   ├── Header.jsx
 │   │   └── TodoItem.jsx
 │   │
@@ -112,7 +112,7 @@ Simple_to_do_List/
 - Provides task input form.
 - Allows selection of task priority.
 
-### DisplayTodo Component
+### TodoItemList Component
 - Displays all tasks dynamically.
 
 ### TodoItem Component
@@ -121,7 +121,7 @@ Simple_to_do_List/
 
 ---
 
-## Installation
+## How to Run & Install
 
 ### Clone the Repository
 
@@ -184,63 +184,8 @@ Add a screenshot here:
 ---
 
 ## GitHub Repository
-
-Repository Link:
-
-```text
-https://github.com/<your-username>/<repository-name>
-```
-
-Example:
-
-```text
-https://github.com/johndoe/simple-to-do-list
-```
-
----
-
-## Sample Commit History
-
-```text
-feat: initialize React project using Vite
-feat: create Header component
-feat: implement add task functionality
-feat: implement task completion feature
-feat: implement edit and delete task functionality
-style: improve application UI
-docs: update README
-```
-
----
-
-## Assignment Requirements Covered
-
-### React Application
-- React application created using Vite.
-
-### Components
-- App
-- Header
-- DisplayTodo (ToDoList)
-- TodoItem
-
-### State & Props
-- State managed in App component.
-- Props passed between components.
-
-### Lists
-- Tasks rendered dynamically using map().
-- Unique key assigned to every task.
-
-### Event Handling
-- Add task
-- Edit task
-- Delete task
-- Mark task as completed
-
-### Styling
-- Custom CSS styling.
-- Responsive design.
+    ```
+    https://github.com/nihal-patidar/Simple_todo_List.git
 
 ---
 

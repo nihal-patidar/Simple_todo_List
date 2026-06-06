@@ -2,14 +2,19 @@ import { useState } from 'react';
 import './index.css'
 import AddTodo from './components/AddTodo';
 import Header from './components/Header';
-import DisplayTodo from './components/DisplayTodo';
+import TodoItemList from './components/TodoItemList';
+
 function App (){
 
-  const [TodoList , setTaskList] = useState([]);
+  // Stores all todo items
+  const [todoList , setTodoList] = useState([]);
+
+  // Stores edit mode state and selected todo
   const [edit , setEdit] = useState({active : false , todo : null});
   
+  // Add a new todo item to the list
   function AddTodoItem(todo){
-    setTaskList((prev) => {
+    setTodoList((prev) => {
       return [...prev , {
         title : todo.title,
         priority : todo.priority,
@@ -19,45 +24,50 @@ function App (){
     })
   }
 
-
+  // Remove a todo item by id
   function removeTask(id){
-    setTaskList(prev => {
+    setTodoList(prev => {
       return prev.filter(todo => todo.id !== id)
     })
   }
 
-
+  // Update an existing todo item
   function updateTodo(id,newTask){
-    setTaskList(prev => prev?.map(todo => todo.id === id ? {id : id , ...newTask} : todo)
+    setTodoList(prev => prev?.map(todo => todo.id === id ? {id : id , ...newTask} : todo)
     )
   }
 
+  // Toggle completion status of a todo item
   function markTodoAsCompleted(id){
-    setTaskList(prev => prev.map(todo => (todo.id === id) ? {...todo, isCompleted : !todo.isCompleted} : todo))
+    setTodoList(prev => prev.map(todo => (todo.id === id) ? {...todo, isCompleted : !todo.isCompleted} : todo))
   }
 
   return <>
     <div className="container">
-        {// Header containing Application display Name.
-        }
-        <Header />  
 
-        {
-          // simple Input tag for adding new todo with priority using useState.
-        <AddTodo AddTodoItem={AddTodoItem} setTaskList={setTaskList} updateTodo={updateTodo} edit={edit} setEdit={setEdit}/>
-        }
+        {/* Application header */}
+        <Header />
 
-        {
-          // Container for displaying todo list.
-        <DisplayTodo TodoList={TodoList} removeTask={removeTask} updateTodo={updateTodo} setEdit={setEdit} markTodoAsCompleted={markTodoAsCompleted}/> 
-        }
+        {/* Form for adding and editing todo items */}
+        <AddTodo
+          AddTodoItem={AddTodoItem}
+          setTodoList={setTodoList}
+          updateTodo={updateTodo}
+          edit={edit}
+          setEdit={setEdit}
+        />
 
-        {
-          // 
-        }
-        
+        {/* Displays all todo items */}
+        <TodoItemList
+          todoList={todoList}
+          removeTask={removeTask}
+          updateTodo={updateTodo}
+          setEdit={setEdit}
+          markTodoAsCompleted={markTodoAsCompleted}
+        />
+
     </div>
   </>
 }
 
-export default App ;
+export default App;
