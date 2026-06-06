@@ -5,7 +5,7 @@ export default function DisplayTask(props){
     return (
         <div className="task_list">
             {props.taskList?.map((task)=>{
-                return <Task key={task.id} task={task} removeTask={props.removeTask} updateTask={props.updateTask}/>
+                return <Task key={task.id} task={task} removeTask={props.removeTask} updateTask={props.updateTask} setEdit={props.setEdit}/>
             })}
         </div>
     )
