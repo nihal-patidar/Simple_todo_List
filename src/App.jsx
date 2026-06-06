@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import './app.css'
-import AddTask from './components/AddTask';
+import './index.css'
+import AddTodo from './components/AddTodo';
 import Header from './components/Header';
-import DisplayTask from './components/DisplayTask';
+import DisplayTodo from './components/DisplayTodo';
 function App (){
 
-  const [taskList , setTaskList] = useState([]);
-  const [edit , setEdit] = useState({active : false , task : null});
+  const [TodoList , setTaskList] = useState([]);
+  const [edit , setEdit] = useState({active : false , todo : null});
   
-  function addTask(task){
+  function AddTodoItem(todo){
     setTaskList((prev) => {
       return [...prev , {
-        title : task.title,
-        priority : task.priority,
-        id : Date.now()
+        title : todo.title,
+        priority : todo.priority,
+        id : Date.now(),
+        isCompleted : false
       }]
     })
   }
@@ -21,14 +22,18 @@ function App (){
 
   function removeTask(id){
     setTaskList(prev => {
-      return prev.filter(task => task.id !== id)
+      return prev.filter(todo => todo.id !== id)
     })
   }
 
 
-  function updateTask(id,newTask){
-    setTaskList(prev => prev?.map(task => task.id === id ? {id : id , ...newTask} : task)
+  function updateTodo(id,newTask){
+    setTaskList(prev => prev?.map(todo => todo.id === id ? {id : id , ...newTask} : todo)
     )
+  }
+
+  function markTodoAsCompleted(id){
+    setTaskList(prev => prev.map(todo => (todo.id === id) ? {...todo, isCompleted : !todo.isCompleted} : todo))
   }
 
   return <>
@@ -38,13 +43,13 @@ function App (){
         <Header />  
 
         {
-          // simple Input tag for adding new task with priority using useState.
-        <AddTask addTask={addTask} setTaskList={setTaskList} updateTask={updateTask} edit={edit} setEdit={setEdit}/>
+          // simple Input tag for adding new todo with priority using useState.
+        <AddTodo AddTodoItem={AddTodoItem} setTaskList={setTaskList} updateTodo={updateTodo} edit={edit} setEdit={setEdit}/>
         }
 
         {
-          // Container for displaying task list.
-        <DisplayTask taskList={taskList} removeTask={removeTask} updateTask={updateTask} setEdit={setEdit}/> 
+          // Container for displaying todo list.
+        <DisplayTodo TodoList={TodoList} removeTask={removeTask} updateTodo={updateTodo} setEdit={setEdit} markTodoAsCompleted={markTodoAsCompleted}/> 
         }
 
         {

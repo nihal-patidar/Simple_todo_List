@@ -1,102 +1,258 @@
-/* Define universal Css*/
+/* =========================
+   Global Styles
+========================= */
+
 * {
-  box-sizing: border-box;
-  margin: 0px ;
-  padding: 0px ;
-  font-family: Segoe UI , sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
 }
 
-/* Main Container */
-body{
-    min-height:100vh;
-    background:linear-gradient(
+body {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+}
+
+/* =========================
+   Main Container
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+    padding: 35px;
+    text-align: center;
+    color: white;
+
+    background: linear-gradient(
         135deg,
         #6439FF,
-        #4F75FF,
-        #00CCDD
+        #4F75FF
+    );
+}
+
+.header h1 {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   Task Form
+========================= */
+
+.task_form {
+    padding: 30px;
+
+    display: grid;
+    gap: 15px;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    background: white;
+    color: #1e293b;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #6439FF;
+}
+
+option {
+    color: white;
+}
+
+option:nth-child(1) {
+    background: #ef4444;
+}
+
+option:nth-child(2) {
+    background: #f59e0b;
+}
+
+option:nth-child(3) {
+    background: #10b981;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.add_task_btn {
+    padding: 14px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #6439FF,
+        #4F75FF
     );
 
-    width :100% ;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
+    transition: 0.2s ease;
 }
 
-
-.tasks{
-    padding:0 30px 30px;
+.add_task_btn:hover {
+    transform: translateY(-2px);
 }
 
-.task{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+/* =========================
+   Task List
+========================= */
 
-    padding:18px;
-    margin-bottom:15px;
-
-    border-radius:14px;
-    background:#f8fafc;
+.tasks {
+    padding: 0 30px 30px;
 }
 
-.left{
-    display:flex;
-    align-items:center;
-    gap:15px;
+.task_list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.checkbox{
-    width:22px;
-    height:22px;
+.section-title {
+    margin: 20px 0 15px;
+    color: #1e293b;
 }
 
-.completed{
-    text-decoration:line-through;
-    color:#94a3b8;
+/* =========================
+   Todo Item
+========================= */
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
 }
 
-.priority{
-    padding:6px 12px;
-    border-radius:20px;
-    color:white;
-    font-size:12px;
+.left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.high{
-    background:#ef4444;
+.checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
 }
 
-.medium{
-    background:#f59e0b;
+.completed {
+    text-decoration: line-through;
+    color: #94a3b8;
 }
 
-.low{
-    background:#10b981;
+/* =========================
+   Priority Badge
+========================= */
+
+.priority {
+    display: inline-block;
+
+    margin-top: 6px;
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: white;
 }
 
-.actions{
-    display:flex;
-    gap:10px;
+.high {
+    background: #ef4444;
 }
 
-.edit{
-    padding:8px 14px;
-    border-radius:8px;
-    background:#4F75FF;
-    color:white;
+.medium {
+    background: #f59e0b;
 }
 
-.delete{
-    padding:8px 14px;
-    border-radius:8px;
-    background:#ef4444;
-    color:white;
+.low {
+    background: #10b981;
 }
 
-.section-title{
-    margin:20px 0 15px;
-    color:#1e293b;
+/* =========================
+   Action Buttons
+========================= */
+
+.actions {
+    display: flex;
+    gap: 10px;
 }
 
+.edit,
+.delete {
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    color: white;
+    font-size: 14px;
+}
+
+.edit {
+    background: #4F75FF;
+}
+
+.delete {
+    background: #ef4444;
+}
+
+.edit:hover,
+.delete:hover {
+    opacity: 0.9;
+}
