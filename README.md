@@ -37,3 +37,217 @@ npm run dev
 After the server starts, open the URL displayed in the terminal (typically `http://localhost:5173`) in your browser.
 
 If the default Vite React page is displayed, the setup has been completed successfully.
+
+# Simple To-Do List Application
+
+A simple and user-friendly To-Do List application built using **React** and **Vite**. The application allows users to add, edit, delete, and mark tasks as completed while managing task priorities.
+
+---
+
+## Features
+
+- Add new tasks
+- Edit existing tasks
+- Delete tasks
+- Mark tasks as completed
+- Assign task priorities (High, Medium, Low)
+- Dynamic task rendering using React state
+- Responsive and visually appealing UI
+
+---
+
+## Technologies Used
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+---
+
+## Project Structure
+
+```text
+Simple_to_do_List/
+│
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+│
+├── src/
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── AddTodo.jsx
+│   │   ├── DisplayTodo.jsx
+│   │   ├── Header.jsx
+│   │   └── TodoItem.jsx
+│   │
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
+```
+
+---
+
+## Component Structure
+
+### App Component
+- Manages application state.
+- Stores all tasks.
+- Handles add, update, delete, and completion functionality.
+
+### Header Component
+- Displays application title and description.
+
+### AddTodo Component
+- Provides task input form.
+- Allows selection of task priority.
+
+### DisplayTodo Component
+- Displays all tasks dynamically.
+
+### TodoItem Component
+- Displays a single task.
+- Handles edit, delete, and completion actions.
+
+---
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/nihal-patidar/Simple_todo_List.git
+```
+
+### Navigate to Project Folder
+
+```bash
+cd Simple_to_do_List
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+After running the command, open the URL displayed in the terminal (usually):
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Screenshots
+
+### Home Page
+
+Add a screenshot here:
+
+![Home Page](./screenshots/ss1.png)
+
+### Add Task
+
+Add a screenshot here:
+
+![Add Task](./screenshots/ss6.png)
+
+### Task List
+
+Add a screenshot here:
+
+![Task List](./screenshots/ss6.png)
+
+### Completed Task
+
+Add a screenshot here:
+
+![Completed Task](./screenshots/ss7.png)
+
+---
+
+## GitHub Repository
+
+Repository Link:
+
+```text
+https://github.com/<your-username>/<repository-name>
+```
+
+Example:
+
+```text
+https://github.com/johndoe/simple-to-do-list
+```
+
+---
+
+## Sample Commit History
+
+```text
+feat: initialize React project using Vite
+feat: create Header component
+feat: implement add task functionality
+feat: implement task completion feature
+feat: implement edit and delete task functionality
+style: improve application UI
+docs: update README
+```
+
+---
+
+## Assignment Requirements Covered
+
+### React Application
+- React application created using Vite.
+
+### Components
+- App
+- Header
+- DisplayTodo (ToDoList)
+- TodoItem
+
+### State & Props
+- State managed in App component.
+- Props passed between components.
+
+### Lists
+- Tasks rendered dynamically using map().
+- Unique key assigned to every task.
+
+### Event Handling
+- Add task
+- Edit task
+- Delete task
+- Mark task as completed
+
+### Styling
+- Custom CSS styling.
+- Responsive design.
+
+---
+
+## Author
+
+**Name:** Nihal Patidar
+
+**Course:** React Pratice
+
+**Technology Stack:** React + Vite + JavaScript + CSS
