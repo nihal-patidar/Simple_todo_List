@@ -1,9 +1,11 @@
+import Task from "./Task"
+
 export default function DisplayTask(props){
     console.log(props.taskList)
     return (
         <div className="task_list">
             {props.taskList?.map((task)=>{
-                return <h1>{task.title}</h1>
+                return <Task key={task.id} task={task} removeTask={props.removeTask} updateTask={props.updateTask}/>
             })}
         </div>
     )

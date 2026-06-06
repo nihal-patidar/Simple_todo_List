@@ -7,11 +7,10 @@ function App (){
 
   const [taskList , setTaskList] = useState([]);
 
-
   function addTask(task){
     setTaskList((prev) => {
       return [...prev , {
-        task : task.title,
+        title : task.title,
         priority : task.priority,
         id : Date.now()
       }]
@@ -44,7 +43,7 @@ function App (){
 
         {
           // Container for displaying task list.
-        <DisplayTask taskList={taskList} /> 
+        <DisplayTask taskList={taskList} removeTask={removeTask} updateTask={updateTask}/> 
         }
 
         {

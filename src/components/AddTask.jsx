@@ -3,7 +3,7 @@ import './addtask.css'
 
 export default function AddTask({addTask}){
 
-    const [task , setTask] = useState("Task1");
+    const [task , setTask] = useState("");
     const [priority , setPriority] = useState('low');
 
     function handleAddTask(){
