@@ -15,12 +15,12 @@ function App (){
   // Add a new todo item to the list
   function AddTodoItem(todo){
     setTodoList((prev) => {
-      return [...prev , {
+      return [{
         title : todo.title,
         priority : todo.priority,
         id : Date.now(),
         isCompleted : false
-      }]
+      }, ...prev]
     })
   }
 
